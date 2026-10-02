@@ -1,32 +1,31 @@
-// Interactive Script for 508 Pizza Redesign
+// Arabic Menu Data and Interactivity
 
 const menuData = {
     pizzas: [
-        { name: "Signature 508 Special", price: 28, desc: "House special blend of mozzarella, pepperoni, seasoned beef, mushrooms, bell peppers, and black olives." },
-        { name: "Classic Margherita", price: 18, desc: "Fresh Fior di Latte mozzarella, rich San Marzano tomato sauce, fresh basil leaves, and extra virgin olive oil." },
-        { name: "Pepperoni Passion", price: "24", desc: "Generous layers of premium spicy pepperoni slices over melted mozzarella and tomato base." },
-        { name: "Quattro Formaggi", price: 26, desc: "Mozzarella, gorgonzola, parmesan, and provolone cheese blend with a touch of oregano." },
-        { name: "BBQ Chicken", price: 25, desc: "Grilled chicken breast chunks, smoky barbecue sauce drizzle, red onions, cilantro, and mozzarella." },
-        { name: "Vegetarian Supreme", price: 22, desc: "Mushroom, bell peppers, sweet corn, sliced tomatoes, black olives, and fresh red onions." }
+        { name: "بيتزا 508 الخاصة", price: 28, desc: "الخلطة الخاصة بالمطعم من الموتزاريلا، الببروني، اللحم المتبل، الفطر، الفلفل الحلو، والزيتون الأسود." },
+        { name: "مارغريتا كلاسيك", price: 18, desc: "جبن فاور دي لاتي موتزاريلا الطازج، صلصة طماطم سان مارزانو الغنية، أوراق الريحان الطازج، وزيت الزيتون البكر." },
+        { name: "ببروني باشن", price: 24, desc: "شرائح الببروني الحارة الفاخرة فوق طبقة وفيرة من الموتزاريلا وصلصة الطماطم." },
+        { name: "أربع أجبان (كواترو فورماجي)", price: 26, desc: "مزيج فاخر من أجبان الموتزاريلا، جورجونزولا، البارميزان، والبروفولون مع لمسة زعتر بري." },
+        { name: "بي بي كيو تشيكن", price: 25, desc: "قطع صدور الدجاج المشوية، صوص باربيكيو المدخن، البصل الأحمر، الكزبرة، وجبن الموتزاريلا." },
+        { name: "سوبريم الخضار", price: 22, desc: "فطر، فلفل حلو، ذرة حلوة، شرائح الطماطم، زيتون أسود، وبصل أحمر طازج." }
     ],
     sides: [
-        { name: "Garlic Butter Crust with Cheese", price: 12, desc: "Fresh baked artisan dough brushed with garlic herb butter and topped with melted mozzarella." },
-        { name: "Spicy Buffalo Wings", price: 16, desc: "Crispy chicken wings tossed in our signature tangy and spicy buffalo sauce." },
-        { name: "Crispy Potato Wedges", price: 10, desc: "Seasoned golden potato wedges served with house special dipping sauce." }
+        { name: "أطراف بالثوم والجبن", price: 12, desc: "عجينة مخبوزة طازجة مدهونة بزبدة الأعشاب والثوم ومغطاة بجبن الموتزاريلا الذائب." },
+        { name: "أجنحة دجاج حارة", price: 16, desc: "أجنحة دجاج مقرمشة مغموسة بصوص البافلو الحار والخاص." },
+        { name: "بطاطا ودجز مقرمشة", price: 10, desc: "أصابع البطاطا المتبلة والمخبوزة حتى العصر مع صوص التغميس الخاص." }
     ],
     drinks: [
-        { name: "Soft Drinks (Cola, Diet Cola, Sprite)", price: 4, desc: "Chilled 330ml canned beverages." },
-        { name: "Fresh Lemon Mint Juice", price: 7, desc: "Hand-crafted refreshing lemonade blended with fresh mint leaves." },
-        { name: "Mineral Water", price: 2, desc: "Pure bottled drinking water (500ml)." }
+        { name: "مشروبات غازية (كولا، دييت كولا، سبرايت)", price: 4, desc: "علب باردة 330 مل." },
+        { name: "عصير ليمون بالنعناع الطازج", price: 7, desc: "عصير منعش محضر يدويًا مع أوراق النعناع الطازجة." },
+        { name: "مياه معدنية", price: 2, desc: "مياه شرب نقية معبأة (500 مل)." }
     ],
     desserts: [
-        { name: "Nutella Calzone", price: 15, desc: "Folded artisan pizza crust filled with warm creamy Nutella hazelnut spread and dusted with powdered sugar." },
-        { name: "Tiramisu", price: 18, desc: "Classic Italian dessert with ladyfingers dipped in espresso, layered with whipped mascarpone." }
+        { name: "كالتزون نوتيلا", price: 15, desc: "عجينة بيتزا مخبوزة محشوة بشوكولاتة النوتزلا الدافئة والكريمة ومزينة بسكر البودرة." },
+        { name: "تيراميسو", price: 18, desc: "حلوى إيطالية كلاسيكية من بسكويت السافوياردي المنقوع بالإسبريسو وطبقات الماسكاربوني." }
     ]
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Menu Rendering & Filtering
     const menuContainer = document.getElementById('menu-items');
     const categoryButtons = document.querySelectorAll('.cat-btn');
 
@@ -36,13 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="menu-card" data-name="${item.name}" data-price="${parseInt(item.price)}">
                 <div class="menu-item-header">
                     <span class="menu-item-title">${item.name}</span>
-                    <span class="menu-item-price">${item.price} LYD</span>
+                    <span class="menu-item-price">${item.price} دينار</span>
                 </div>
                 <p class="menu-item-desc">${item.desc}</p>
             </div>
         `).join('');
 
-        // Attach click listeners to menu cards to open modal
         document.querySelectorAll('.menu-card').forEach(card => {
             card.addEventListener('click', () => {
                 const name = card.getAttribute('data-name');
@@ -62,15 +60,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Modal Handling
     const modal = document.getElementById('order-modal');
     const modalClose = document.getElementById('modal-close-btn');
-    const modalTrigger = document.getElementById('order-modal-trigger');
-    const exploreBtn = document.getElementById('explore-menu-btn');
+    const modalTrigger = document.getElementById('nav-order-btn');
     const confirmOrderBtn = document.getElementById('confirm-order-btn');
     const toast = document.getElementById('toast');
 
-    let currentItem = { name: "Signature 508 Special", basePrice: 28, sizePrice: 0, crustPrice: 0 };
+    let currentItem = { name: "بيتزا 508 الخاصة", basePrice: 28, sizePrice: 0, crustPrice: 0 };
 
     function openOrderModal(itemName, basePrice) {
         currentItem.name = itemName;
@@ -80,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         document.getElementById('modal-item-name').innerText = itemName;
         
-        // Reset chips
         document.querySelectorAll('#size-options .chip').forEach((c, idx) => {
             c.classList.toggle('active', idx === 0);
         });
@@ -95,17 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateModalPrice() {
         const total = currentItem.basePrice + currentItem.sizePrice + currentItem.crustPrice;
-        document.getElementById('modal-total-price').innerText = total + " LYD";
+        document.getElementById('modal-total-price').innerText = total + " دينار";
     }
 
     if (modalTrigger) {
-        modalTrigger.addEventListener('click', () => openOrderModal("Signature 508 Special", 28));
-    }
-    if (exploreBtn) {
-        exploreBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            document.getElementById('menu').scrollIntoView({ behavior: 'smooth' });
-        });
+        modalTrigger.addEventListener('click', () => openOrderModal("بيتزا 508 الخاصة", 28));
     }
 
     modalClose.addEventListener('click', () => modal.classList.remove('active'));
@@ -113,7 +102,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === modal) modal.classList.remove('active');
     });
 
-    // Size & Crust Chip selection
     document.querySelectorAll('#size-options .chip').forEach(chip => {
         chip.addEventListener('click', () => {
             document.querySelectorAll('#size-options .chip').forEach(c => c.classList.remove('active'));
@@ -127,14 +115,14 @@ document.addEventListener('DOMContentLoaded', () => {
         chip.addEventListener('click', () => {
             document.querySelectorAll('#crust-options .chip').forEach(c => c.classList.remove('active'));
             chip.classList.add('active');
-            currentItem.crustPrice = chip.getAttribute('data-crust') === 'Cheese Stuffed' ? 4 : 0;
+            currentItem.crustPrice = chip.getAttribute('data-crust') === 'محشوة بالجبن' ? 4 : 0;
             updateModalPrice();
         });
     });
 
     confirmOrderBtn.addEventListener('click', () => {
         modal.classList.remove('active');
-        showToast("Order placed successfully! We are preparing your fresh pizza.");
+        showToast("تم إرسال طلبك بنجاح! نحن نقوم بتحضير طلبك الآن.");
     });
 
     function showToast(msg) {
@@ -145,7 +133,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 3500);
     }
 
-    // Lightbox handling
     const lightbox = document.getElementById('lightbox-modal');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxClose = document.querySelector('.lightbox-close');
@@ -163,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === lightbox) lightbox.classList.remove('active');
     });
 
-    // Mobile menu toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const navLinks = document.querySelector('.nav-links');
 
@@ -174,11 +160,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 navLinks.style.flexDirection = 'column';
                 navLinks.style.position = 'absolute';
                 navLinks.style.top = '70px';
-                navLinks.style.left = '0';
+                navLinks.style.right = '0';
                 navLinks.style.width = '100%';
                 navLinks.style.background = 'var(--bg-secondary)';
                 navLinks.style.padding = '24px';
                 navLinks.style.borderBottom = '1px solid var(--border-color)';
+                navLinks.style.textAlign = 'right';
             }
         });
     }

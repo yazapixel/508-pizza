@@ -1,4 +1,4 @@
-/* Pristine Centering & Minimalist Luxury Styling */
+/* RTL & Arabic Minimalist Luxury Fine-Dining Styling */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -17,15 +17,16 @@
 
 html {
     scroll-behavior: smooth;
+    direction: rtl;
 }
 
 body {
-    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-family: 'Cairo', sans-serif;
     background-color: var(--bg-primary);
     color: var(--text-main);
-    line-height: 1.7;
+    line-height: 1.8;
     overflow-x: hidden;
-    text-align: left;
+    text-align: right;
 }
 
 h1, h2, h3, h4, .logo-title {
@@ -89,15 +90,15 @@ a {
 
 .logo-title {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-main);
-    letter-spacing: 2px;
+    letter-spacing: 1px;
 }
 
 .logo-subtitle {
     font-size: 10px;
     color: var(--accent-gold);
-    letter-spacing: 3px;
+    letter-spacing: 2px;
     text-transform: uppercase;
 }
 
@@ -108,11 +109,9 @@ a {
 }
 
 .nav-links a {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 400;
     color: var(--text-muted);
-    letter-spacing: 1px;
-    text-transform: uppercase;
     transition: color 0.2s;
 }
 
@@ -126,12 +125,11 @@ a {
     border: 1px solid var(--accent-gold);
     padding: 10px 24px;
     border-radius: 0px;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
+    font-family: 'Cairo', sans-serif;
 }
 
 .nav-order-btn:hover {
@@ -176,7 +174,7 @@ a {
 
 .hero-content {
     width: 100%;
-    text-align: left;
+    text-align: right;
 }
 
 .hero-badge {
@@ -184,23 +182,21 @@ a {
     border-bottom: 1px solid var(--accent-gold);
     color: var(--accent-gold);
     padding-bottom: 4px;
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
     margin-bottom: 28px;
 }
 
 #hero h1 {
-    font-size: 48px;
-    line-height: 1.2;
+    font-size: 46px;
+    line-height: 1.3;
     margin-bottom: 24px;
     color: var(--text-main);
-    font-weight: 400;
+    font-weight: 700;
 }
 
 #hero p {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--text-muted);
     margin-bottom: 40px;
     line-height: 1.8;
@@ -217,14 +213,13 @@ a {
 .btn {
     padding: 14px 32px;
     border-radius: 0px;
-    font-weight: 500;
-    font-size: 13px;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
     cursor: pointer;
     transition: all 0.2s;
     display: inline-block;
     text-align: center;
+    font-family: 'Cairo', sans-serif;
 }
 
 .btn-primary {
@@ -260,16 +255,13 @@ a {
 .stat-item strong {
     display: block;
     font-size: 26px;
-    font-family: 'Playfair Display', serif;
     color: var(--accent-gold);
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .stat-item span {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-muted);
-    letter-spacing: 1px;
-    text-transform: uppercase;
 }
 
 .hero-visual {
@@ -305,10 +297,8 @@ a {
 .section-tag {
     display: inline-block;
     color: var(--accent-gold);
-    font-size: 11px;
-    font-weight: 500;
-    letter-spacing: 3px;
-    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 600;
     margin-bottom: 12px;
 }
 
@@ -316,12 +306,12 @@ a {
     font-size: 38px;
     color: var(--text-main);
     margin-bottom: 12px;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .section-header p {
     color: var(--text-muted);
-    font-size: 15px;
+    font-size: 16px;
 }
 
 /* Menu Section */
@@ -345,12 +335,11 @@ a {
     color: var(--text-muted);
     padding: 12px 28px;
     border-radius: 0px;
-    font-size: 12px;
-    font-weight: 500;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
+    font-family: 'Cairo', sans-serif;
 }
 
 .cat-btn.active, .cat-btn:hover {
@@ -371,24 +360,23 @@ a {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     padding: 32px;
-    text-align: left;
+    text-align: right;
     cursor: pointer;
     transition: border-color 0.2s;
     position: relative;
 }
 
 .menu-card::after {
-    content: "CUSTOMIZE +";
+    content: "+ تخصيص الطلب";
     position: absolute;
     bottom: 0;
-    left: 0;
+    right: 0;
     width: 100%;
     background: var(--accent-gold);
     color: var(--bg-primary);
     text-align: center;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 700;
-    letter-spacing: 2px;
     padding: 6px;
     transform: translateY(100%);
     transition: transform 0.2s ease;
@@ -410,14 +398,14 @@ a {
 }
 
 .menu-item-title {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 19px;
+    font-weight: 700;
     color: var(--text-main);
 }
 
 .menu-item-price {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 19px;
+    font-weight: 700;
     color: var(--accent-gold);
 }
 
@@ -470,9 +458,8 @@ a {
 
 .gallery-overlay span {
     color: var(--accent-gold);
-    font-size: 12px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 600;
     border: 1px solid var(--accent-gold);
     padding: 10px 20px;
 }
@@ -501,19 +488,19 @@ a {
 }
 
 .about-text {
-    text-align: left;
+    text-align: right;
 }
 
 .about-text h2 {
     font-size: 38px;
     margin-bottom: 24px;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .about-text p {
     color: var(--text-muted);
     margin-bottom: 20px;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.8;
 }
 
@@ -531,10 +518,10 @@ a {
 }
 
 .highlight-box h4 {
-    font-size: 15px;
+    font-size: 16px;
     color: var(--accent-gold);
     margin-bottom: 8px;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .highlight-box p {
@@ -581,8 +568,7 @@ a {
     font-size: 20px;
     color: var(--accent-gold);
     margin-bottom: 16px;
-    font-weight: 400;
-    letter-spacing: 1px;
+    font-weight: 700;
 }
 
 .loc-card p {
@@ -618,12 +604,12 @@ footer {
 
 .footer-brand {
     font-family: 'Playfair Display', serif;
-    font-size: 16px;
-    letter-spacing: 3px;
+    font-size: 18px;
+    font-weight: 700;
 }
 
 footer p {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--text-muted);
 }
 
@@ -653,13 +639,13 @@ footer p {
     max-width: 480px;
     padding: 40px;
     position: relative;
-    text-align: left;
+    text-align: right;
 }
 
 .modal-close {
     position: absolute;
     top: 20px;
-    right: 24px;
+    left: 24px;
     background: none;
     border: none;
     color: var(--text-muted);
@@ -670,15 +656,14 @@ footer p {
 .modal-header h3 {
     font-size: 24px;
     margin-bottom: 6px;
-    font-weight: 400;
+    font-weight: 700;
 }
 
 .modal-header p {
-    font-size: 12px;
+    font-size: 13px;
     color: var(--accent-gold);
     margin-bottom: 24px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .option-group {
@@ -687,12 +672,10 @@ footer p {
 
 .option-group label {
     display: block;
-    font-size: 11px;
-    font-weight: 500;
+    font-size: 12px;
+    font-weight: 600;
     color: var(--text-muted);
     margin-bottom: 10px;
-    letter-spacing: 2px;
-    text-transform: uppercase;
 }
 
 .option-chips {
@@ -709,12 +692,14 @@ footer p {
     font-size: 13px;
     cursor: pointer;
     transition: all 0.2s;
+    font-family: 'Cairo', sans-serif;
 }
 
 .chip.active, .chip:hover {
     background: var(--accent-gold);
     color: var(--bg-primary);
     border-color: var(--accent-gold);
+    font-weight: 600;
 }
 
 textarea {
@@ -726,6 +711,7 @@ textarea {
     font-family: inherit;
     font-size: 14px;
     resize: none;
+    text-align: right;
 }
 
 .modal-footer {
@@ -738,17 +724,15 @@ textarea {
 }
 
 .modal-price-display span {
-    font-size: 11px;
+    font-size: 12px;
     color: var(--text-muted);
-    letter-spacing: 1px;
-    text-transform: uppercase;
     display: block;
 }
 
 .modal-price-display strong {
     font-size: 20px;
     color: var(--accent-gold);
-    font-weight: 400;
+    font-weight: 700;
 }
 
 /* Lightbox */
@@ -779,7 +763,7 @@ textarea {
 .lightbox-close {
     position: absolute;
     top: 30px;
-    right: 40px;
+    left: 40px;
     background: none;
     border: none;
     color: #ffffff;
@@ -791,13 +775,12 @@ textarea {
 .toast {
     position: fixed;
     bottom: 30px;
-    right: 30px;
+    left: 30px;
     background: var(--accent-gold);
     color: var(--bg-primary);
     padding: 14px 28px;
-    font-weight: 500;
-    font-size: 13px;
-    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 14px;
     z-index: 4000;
     transform: translateY(100px);
     opacity: 0;
