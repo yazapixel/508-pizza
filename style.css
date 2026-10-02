@@ -13,7 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-h1, h2, h3, .logo, .footer-logo {
+h1, h2, h3, .logo-text {
     font-family: 'Playfair Display', serif;
 }
 
@@ -43,14 +43,28 @@ a {
 .nav-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 18px 20px;
+    padding: 12px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.logo {
-    font-size: 24px;
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nav-logo-img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff4757;
+}
+
+.logo-text {
+    font-size: 22px;
     font-weight: 700;
     color: #ff4757;
     letter-spacing: 1px;
@@ -109,23 +123,16 @@ a {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 120px 20px 60px;
+    padding: 140px 20px 80px;
     background: linear-gradient(135deg, #0d0d0f 0%, #1a1113 100%);
-    position: relative;
 }
 
-#hero .container, #hero {
-    max-width: 1200px;
-    margin: 0 auto;
+.hero-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    gap: 50px;
     align-items: center;
     width: 100%;
-}
-
-.hero-content {
-    padding-left: 20px;
 }
 
 .hero-tag {
@@ -141,7 +148,7 @@ a {
 }
 
 #hero h1 {
-    font-size: 48px;
+    font-size: 46px;
     line-height: 1.2;
     margin-bottom: 20px;
     color: #ffffff;
@@ -197,33 +204,25 @@ a {
     align-items: center;
 }
 
-.pizza-badge {
-    width: 300px;
-    height: 300px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #261618 0%, #140b0d 100%);
-    border: 4px solid #ff4757;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 0 40px rgba(255, 71, 87, 0.3);
-    text-align: center;
+.hero-img-card {
+    width: 100%;
+    max-width: 420px;
+    aspect-ratio: 4 / 3;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 3px solid rgba(255, 71, 87, 0.4);
+    box-shadow: 0 0 30px rgba(255, 71, 87, 0.25);
 }
 
-.badge-number {
-    font-family: 'Playfair Display', serif;
-    font-size: 64px;
-    font-weight: 700;
-    color: #ff4757;
-    line-height: 1;
+.hero-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-.badge-text {
-    font-size: 14px;
-    letter-spacing: 2px;
-    color: #d1d5db;
-    margin-top: 5px;
+.hero-img-card:hover .hero-main-img {
+    transform: scale(1.05);
 }
 
 /* Menu Section */
@@ -241,6 +240,7 @@ a {
     font-size: 38px;
     color: #ffffff;
     margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
 }
 
 .section-header p {
@@ -318,10 +318,48 @@ a {
     color: #9ca3af;
 }
 
+/* Gallery Section */
+#gallery {
+    padding: 100px 0;
+    background: #0d0d0f;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: #16161d;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    border-color: #ff4757;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+}
+
 /* About Section */
 #about {
     padding: 100px 0;
-    background: #0d0d0f;
+    background: #111115;
 }
 
 .about-grid {
@@ -344,6 +382,7 @@ a {
     font-size: 38px;
     margin-bottom: 20px;
     color: #ffffff;
+    font-family: 'Playfair Display', serif;
 }
 
 .about-text p {
@@ -383,6 +422,7 @@ a {
     font-size: 24px;
     color: #ffffff;
     margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
 }
 
 .card-highlight p {
@@ -393,7 +433,7 @@ a {
 /* Location Section */
 #location {
     padding: 100px 0;
-    background: #111115;
+    background: #0d0d0f;
 }
 
 .location-grid {
@@ -414,6 +454,7 @@ a {
     font-size: 20px;
     color: #ff4757;
     margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
 }
 
 .info-card p {
@@ -425,15 +466,18 @@ a {
 /* Footer */
 footer {
     background: #09090b;
-    padding: 30px 0;
+    padding: 40px 0;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     text-align: center;
 }
 
-.footer-logo {
-    font-size: 20px;
-    color: #ff4757;
-    margin-bottom: 10px;
+.footer-logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ff4757;
+    margin-bottom: 15px;
 }
 
 footer p {
@@ -443,19 +487,16 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 900px) {
-    #hero .container, #hero {
+    .hero-container {
         grid-template-columns: 1fr;
         text-align: center;
         padding-top: 100px;
-    }
-    .hero-content {
-        padding-left: 0;
     }
     .hero-btns {
         justify-content: center;
     }
     .hero-visual {
-        margin-top: 40px;
+        margin-top: 30px;
     }
     .about-grid {
         grid-template-columns: 1fr;
