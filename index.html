@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>508 Pizza | Artisan Pizzeria in Benghazi</title>
+    <title>508 Pizza | Artisan Pizzeria & Wood-Fired Excellence in Benghazi</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Header / Navigation -->
@@ -15,15 +15,19 @@
         <div class="nav-container">
             <a href="#hero" class="logo-wrapper">
                 <img src="https://i.ibb.co/Q77q3nSx/Screenshot-2026-10-02-03-44-56-495-com-miui-gallery-edit.jpg" alt="508 Pizza Logo" class="nav-logo-img">
-                <span class="logo-text">508 PIZZA</span>
+                <div class="logo-text-group">
+                    <span class="logo-title">508 PIZZA</span>
+                    <span class="logo-subtitle">Artisan Pizzeria</span>
+                </div>
             </a>
             <nav class="nav-links">
-                <a href="#hero">Home</a>
+                <a href="#hero" class="active">Home</a>
                 <a href="#menu">Menu</a>
                 <a href="#gallery">Gallery</a>
-                <a href="#about">About</a>
+                <a href="#about">Our Story</a>
+                <a href="#reviews">Reviews</a>
                 <a href="#location">Location</a>
-                <a href="#contact" class="nav-order-btn">Order Now</a>
+                <button id="order-modal-trigger" class="nav-order-btn">Order Online</button>
             </nav>
             <button id="mobile-menu-btn" aria-label="Toggle Navigation">
                 <span></span>
@@ -35,76 +39,108 @@
 
     <!-- Hero Section -->
     <section id="hero">
-        <div class="hero-container container">
+        <div class="hero-backdrop"></div>
+        <div class="container hero-container">
             <div class="hero-content">
-                <span class="hero-tag">AUTHENTIC ARTISAN PIZZA</span>
-                <h1>Savor the True Taste of Italy in Benghazi</h1>
-                <p>Hand-tossed dough, premium fresh ingredients, rich melted cheese, and wood-fired perfection baked daily at 508 Pizza.</p>
-                <div class="hero-btns">
-                    <a href="#menu" class="btn btn-primary">Explore Menu</a>
-                    <a href="#gallery" class="btn btn-secondary">View Gallery</a>
+                <div class="hero-badge">
+                    <span>TAHA HUSSEIN STREET, BENGHAZI</span>
+                </div>
+                <h1>Mastering the Art of Wood-Fired Pizza</h1>
+                <p>Hand-crafted with slow-fermented artisan dough, San Marzano tomatoes, and 100% real dairy mozzarella. Experience supreme culinary perfection at 508 Pizza.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" id="explore-menu-btn">Explore Menu & Order</button>
+                    <a href="#gallery" class="btn btn-outline">View Photo Gallery</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <strong>100%</strong>
+                        <span>Fresh Ingredients</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>508</strong>
+                        <span>Signature Recipe</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>Daily</strong>
+                        <span>Wood-Fired Fresh</span>
+                    </div>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="hero-img-card">
-                    <img src="https://i.ibb.co/r2sH3Sx6/Screenshot-2026-10-02-03-36-06-342-com-google-android-apps-maps-edit.jpg" alt="508 Pizza Dish" class="hero-main-img">
+                <div class="hero-card-stack">
+                    <div class="hero-card main-img-card">
+                        <img src="https://i.ibb.co/r2sH3Sx6/Screenshot-2026-10-02-03-36-06-342-com-google-android-apps-maps-edit.jpg" alt="508 Pizza Special">
+                    </div>
+                    <div class="hero-card floating-card">
+                        <img src="https://i.ibb.co/7dkRLwFm/Screenshot-2026-10-02-03-35-45-191-com-google-android-apps-maps-edit.jpg" alt="Fresh Pizza">
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Menu Section -->
+    <!-- Interactive Menu Section -->
     <section id="menu">
         <div class="container">
             <div class="section-header">
-                <h2>Our Delicious Menu</h2>
-                <p>Crafted with passion and baked to golden perfection</p>
+                <span class="section-tag">GASTRONOMIC SELECTION</span>
+                <h2>Our Crafted Menu</h2>
+                <p>Click any item to customize and add to your order</p>
             </div>
 
             <div class="menu-categories">
-                <button class="cat-btn active" data-category="pizzas">Pizzas</button>
-                <button class="cat-btn" data-category="sides">Sides & Starters</button>
-                <button class="cat-btn" data-category="drinks">Beverages</button>
-                <button class="cat-btn" data-category="desserts">Desserts</button>
+                <button class="cat-btn active" data-category="pizzas">Artisan Pizzas</button>
+                <button class="cat-btn" data-category="sides">Sides & Appetizers</button>
+                <button class="cat-btn" data-category="drinks">Refreshments</button>
+                <button class="cat-btn" data-category="desserts">Sweet Desserts</button>
             </div>
 
             <div class="menu-grid" id="menu-items">
-                <!-- Items populated via JS -->
+                <!-- Dynamically populated -->
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
+    <!-- Interactive Photo Gallery Section -->
     <section id="gallery">
         <div class="container">
             <div class="section-header">
-                <h2>Photo Gallery</h2>
-                <p>A glimpse inside 508 Pizza and our signature creations</p>
+                <span class="section-tag">VISUAL JOURNEY</span>
+                <h2>Inside 508 Pizza</h2>
+                <p>Click any photo to open in high-resolution view</p>
             </div>
             <div class="gallery-grid">
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co/r2sH3Sx6/Screenshot-2026-10-02-03-36-06-342-com-google-android-apps-maps-edit.jpg" alt="508 Pizza Creation 1" loading="lazy">
+                <div class="gallery-card" data-img="https://i.ibb.co/r2sH3Sx6/Screenshot-2026-10-02-03-36-06-342-com-google-android-apps-maps-edit.jpg">
+                    <img src="https://i.ibb.co/r2sH3Sx6/Screenshot-2026-10-02-03-36-06-342-com-google-android-apps-maps-edit.jpg" alt="Gallery Photo 1" loading="lazy">
+                    <div class="gallery-overlay"><span>View Photo</span></div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co/7dkRLwFm/Screenshot-2026-10-02-03-35-45-191-com-google-android-apps-maps-edit.jpg" alt="508 Pizza Creation 2" loading="lazy">
+                <div class="gallery-card" data-img="https://i.ibb.co/7dkRLwFm/Screenshot-2026-10-02-03-35-45-191-com-google-android-apps-maps-edit.jpg">
+                    <img src="https://i.ibb.co/7dkRLwFm/Screenshot-2026-10-02-03-35-45-191-com-google-android-apps-maps-edit.jpg" alt="Gallery Photo 2" loading="lazy">
+                    <div class="gallery-overlay"><span>View Photo</span></div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co/KzsfxZmg/Screenshot-2026-10-02-03-35-31-024-com-google-android-apps-maps-edit.jpg" alt="508 Pizza Creation 3" loading="lazy">
+                <div class="gallery-card" data-img="https://i.ibb.co/KzsfxZmg/Screenshot-2026-10-02-03-35-31-024-com-google-android-apps-maps-edit.jpg">
+                    <img src="https://i.ibb.co/KzsfxZmg/Screenshot-2026-10-02-03-35-31-024-com-google-android-apps-maps-edit.jpg" alt="Gallery Photo 3" loading="lazy">
+                    <div class="gallery-overlay"><span>View Photo</span></div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co/wZrfbHth/Screenshot-2026-10-02-03-35-15-005-com-google-android-apps-maps-edit.jpg" alt="508 Pizza Creation 4" loading="lazy">
+                <div class="gallery-card" data-img="https://i.ibb.co/wZrfbHth/Screenshot-2026-10-02-03-35-15-005-com-google-android-apps-maps-edit.jpg">
+                    <img src="https://i.ibb.co/wZrfbHth/Screenshot-2026-10-02-03-35-15-005-com-google-android-apps-maps-edit.jpg" alt="Gallery Photo 4" loading="lazy">
+                    <div class="gallery-overlay"><span>View Photo</span></div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co/NzCcRmn/Screenshot-2026-10-02-03-35-02-904-com-google-android-apps-maps-edit.jpg" alt="508 Pizza Creation 5" loading="lazy">
+                <div class="gallery-card" data-img="https://i.ibb.co/NzCcRmn/Screenshot-2026-10-02-03-35-02-904-com-google-android-apps-maps-edit.jpg">
+                    <img src="https://i.ibb.co/NzCcRmn/Screenshot-2026-10-02-03-35-02-904-com-google-android-apps-maps-edit.jpg" alt="Gallery Photo 5" loading="lazy">
+                    <div class="gallery-overlay"><span>View Photo</span></div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co/8ntbCPh0/Screenshot-2026-10-02-03-34-51-621-com-google-android-apps-maps-edit.jpg" alt="508 Pizza Creation 6" loading="lazy">
+                <div class="gallery-card" data-img="https://i.ibb.co/8ntbCPh0/Screenshot-2026-10-02-03-34-51-621-com-google-android-apps-maps-edit.jpg">
+                    <img src="https://i.ibb.co/8ntbCPh0/Screenshot-2026-10-02-03-34-51-621-com-google-android-apps-maps-edit.jpg" alt="Gallery Photo 6" loading="lazy">
+                    <div class="gallery-overlay"><span>View Photo</span></div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co/b5VRvbc1/Screenshot-2026-10-02-03-34-22-944-com-google-android-apps-maps-edit.jpg" alt="508 Pizza Creation 7" loading="lazy">
+                <div class="gallery-card" data-img="https://i.ibb.co/b5VRvbc1/Screenshot-2026-10-02-03-34-22-944-com-google-android-apps-maps-edit.jpg">
+                    <img src="https://i.ibb.co/b5VRvbc1/Screenshot-2026-10-02-03-34-22-944-com-google-android-apps-maps-edit.jpg" alt="Gallery Photo 7" loading="lazy">
+                    <div class="gallery-overlay"><span>View Photo</span></div>
                 </div>
-                <div class="gallery-item">
-                    <img src="https://i.ibb.co/TM7xMCTv/Screenshot-2026-10-02-03-33-51-466-com-google-android-apps-maps-edit.jpg" alt="508 Pizza Creation 8" loading="lazy">
+                <div class="gallery-card" data-img="https://i.ibb.co/TM7xMCTv/Screenshot-2026-10-02-03-33-51-466-com-google-android-apps-maps-edit.jpg">
+                    <img src="https://i.ibb.co/TM7xMCTv/Screenshot-2026-10-02-03-33-51-466-com-google-android-apps-maps-edit.jpg" alt="Gallery Photo 8" loading="lazy">
+                    <div class="gallery-overlay"><span>View Photo</span></div>
                 </div>
             </div>
         </div>
@@ -114,53 +150,78 @@
     <section id="about">
         <div class="container about-grid">
             <div class="about-text">
-                <span class="sub-heading">OUR STORY</span>
-                <h2>Passion for Perfect Pizza</h2>
-                <p>Located on Taha Hussein Street in Benghazi, 508 Pizza was founded with a singular mission: to bring exceptional artisan pizza crafted with dedication, premium ingredients, and authentic recipes to our community.</p>
-                <p>Every single pizza is hand-stretched, layered with our signature house-made tomato sauce, topped with 100% real mozzarella, and baked until bubbling and golden.</p>
-                <div class="features-list">
-                    <div class="feature-item">
-                        <strong>Fresh Ingredients</strong>
-                        <span>Sourced daily for maximum flavor</span>
+                <span class="section-tag">OUR HERITAGE</span>
+                <h2>Tradition Meets Culinary Passion</h2>
+                <p>Situated on Taha Hussein Street right by the Military Accounts Complex in Benghazi, 508 Pizza was born out of a relentless dedication to authentic Italian pizza craftsmanship.</p>
+                <p>We believe great pizza begins with uncompromising quality: flour imported for elasticity and crunch, tomatoes ripened under the Mediterranean sun, and time-honored baking techniques.</p>
+                <div class="about-highlights">
+                    <div class="highlight-box">
+                        <h4>Hand-Tossed Daily</h4>
+                        <p>Dough proofed for 48 hours for ideal digestibility and crust bubbles.</p>
                     </div>
-                    <div class="feature-item">
-                        <strong>Artisan Dough</strong>
-                        <span>Slow-fermented for perfect crust</span>
+                    <div class="highlight-box">
+                        <h4>Premium Cheeses</h4>
+                        <p>100% genuine mozzarella melted to golden perfection.</p>
                     </div>
                 </div>
             </div>
-            <div class="about-card">
-                <div class="card-highlight">
-                    <h3>Quality First</h3>
-                    <p>Experience unmatched taste in every single bite. Dine-in, takeaway, and delivery available.</p>
+            <div class="about-image-card">
+                <img src="https://i.ibb.co/7dkRLwFm/Screenshot-2026-10-02-03-35-45-191-com-google-android-apps-maps-edit.jpg" alt="About 508 Pizza">
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Reviews Section -->
+    <section id="reviews">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">CUSTOMER TESTIMONIALS</span>
+                <h2>Loved by Pizza Enthusiasts</h2>
+                <p>What our guests say about 508 Pizza</p>
+            </div>
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="stars">5.0 / 5.0</div>
+                    <p>"Absolute best pizza in Benghazi! The crust is light, crispy, and the cheese blend is phenomenal. Highly recommended!"</p>
+                    <span class="review-author">- Ahmed M.</span>
+                </div>
+                <div class="review-card">
+                    <div class="stars">5.0 / 5.0</div>
+                    <p>"Incredible flavors and super fast delivery. The signature 508 special pizza is unmatched anywhere in town."</p>
+                    <span class="review-author">- Fatima K.</span>
+                </div>
+                <div class="review-card">
+                    <div class="stars">5.0 / 5.0</div>
+                    <p>"Great ambiance, very clean, and professional staff. Truly authentic Italian taste right here on Taha Hussein Street."</p>
+                    <span class="review-author">- Omar S.</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Location & Hours Section -->
+    <!-- Location & Contact Section -->
     <section id="location">
         <div class="container">
             <div class="section-header">
-                <h2>Visit & Contact Us</h2>
-                <p>We are waiting to serve you hot, fresh pizza</p>
+                <span class="section-tag">FIND US</span>
+                <h2>Visit 508 Pizza Today</h2>
+                <p>Open daily for dine-in, takeaway, and delivery across Benghazi</p>
             </div>
             <div class="location-grid">
-                <div class="info-card">
-                    <h3>Address</h3>
+                <div class="loc-card">
+                    <h3>Location Address</h3>
                     <p>Taha Hussein Street, Military Accounts Complex</p>
                     <p>Benghazi, Libya</p>
                 </div>
-                <div class="info-card">
-                    <h3>Opening Hours</h3>
+                <div class="loc-card">
+                    <h3>Working Hours</h3>
                     <p>Saturday - Thursday: 12:00 PM - 11:30 PM</p>
                     <p>Friday: 2:00 PM - 12:00 AM</p>
                 </div>
-                <div class="info-card" id="contact">
-                    <h3>Orders & Inquiries</h3>
+                <div class="loc-card">
+                    <h3>Direct Contact</h3>
                     <p>Phone: +218 91 000 0508</p>
-                    <p>Delivery available across Benghazi</p>
-                    <a href="tel:+218910000508" class="btn btn-primary" style="margin-top: 15px; display: inline-block;">Call to Order</a>
+                    <a href="tel:+218910000508" class="btn btn-primary" style="margin-top: 15px; display: inline-block;">Call Now</a>
                 </div>
             </div>
         </div>
@@ -169,10 +230,60 @@
     <!-- Footer -->
     <footer>
         <div class="container footer-content">
-            <img src="https://i.ibb.co/Q77q3nSx/Screenshot-2026-10-02-03-44-56-495-com-miui-gallery-edit.jpg" alt="508 Pizza Logo" class="footer-logo-img">
-            <p>&copy; 2026 508 Pizza. All rights reserved. Located in Benghazi, Libya.</p>
+            <img src="https://i.ibb.co/Q77q3nSx/Screenshot-2026-10-02-03-44-56-495-com-miui-gallery-edit.jpg" alt="508 Logo" class="footer-logo">
+            <p class="footer-brand">508 PIZZA BENGHAZI</p>
+            <p>&copy; 2026 508 Pizza. All rights reserved. Crafted for excellence.</p>
         </div>
     </footer>
+
+    <!-- Interactive Order Modal -->
+    <div id="order-modal" class="modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close-btn">&times;</button>
+            <div class="modal-header">
+                <h3>Customize Your Order</h3>
+                <p id="modal-item-name">Select your preferences</p>
+            </div>
+            <div class="modal-body">
+                <div class="option-group">
+                    <label>Size</label>
+                    <div class="option-chips" id="size-options">
+                        <button class="chip active" data-size="Regular" data-price="0">Regular</button>
+                        <button class="chip" data-size="Large" data-price="6">Large (+6 LYD)</button>
+                        <button class="chip" data-size="Family" data-price="12">Family (+12 LYD)</button>
+                    </div>
+                </div>
+                <div class="option-group">
+                    <label>Crust Style</label>
+                    <div class="option-chips" id="crust-options">
+                        <button class="chip active" data-crust="Traditional">Traditional Hand-Tossed</button>
+                        <button class="chip" data-crust="Thin">Crispy Thin Crust</button>
+                        <button class="chip" data-crust="Cheese Stuffed">Cheese Stuffed Crust (+4 LYD)</button>
+                    </div>
+                </div>
+                <div class="option-group">
+                    <label>Special Instructions</label>
+                    <textarea id="order-notes" placeholder="Any special requests (e.g. extra crispy, no onions)..." rows="2"></textarea>
+                </div>
+                <div class="modal-footer">
+                    <div class="modal-price-display">
+                        <span>Total Price:</span>
+                        <strong id="modal-total-price">28 LYD</strong>
+                    </div>
+                    <button class="btn btn-primary" id="confirm-order-btn">Confirm Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox-modal" class="lightbox">
+        <button class="lightbox-close">&times;</button>
+        <img id="lightbox-img" src="" alt="Enlarged Photo">
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast">Order added successfully!</div>
 
     <script src="js/script.js"></script>
 </body>
