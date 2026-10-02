@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>508 Pizza | Artisan Pizzeria in Benghazi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header / Navigation -->
+    <header id="header">
+        <div class="nav-container">
+            <div class="logo">508 PIZZA</div>
+            <nav class="nav-links">
+                <a href="#hero">Home</a>
+                <a href="#menu">Menu</a>
+                <a href="#about">About</a>
+                <a href="#location">Location</a>
+                <a href="#contact" class="nav-order-btn">Order Now</a>
+            </nav>
+            <button id="mobile-menu-btn" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <span class="hero-tag">AUTHENTIC ARTISAN PIZZA</span>
+            <h1>Savor the True Taste of Italy in Benghazi</h1>
+            <p>Hand-tossed dough, premium fresh ingredients, rich melted cheese, and wood-fired perfection baked daily at 508 Pizza.</p>
+            <div class="hero-btns">
+                <a href="#menu" class="btn btn-primary">Explore Menu</a>
+                <a href="#contact" class="btn btn-secondary">Visit Us</a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="pizza-badge">
+                <span class="badge-number">508</span>
+                <span class="badge-text">Signature Recipe</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Delicious Menu</h2>
+                <p>Crafted with passion and baked to golden perfection</p>
+            </div>
+
+            <div class="menu-categories">
+                <button class="cat-btn active" data-category="pizzas">Pizzas</button>
+                <button class="cat-btn" data-category="sides">Sides & Starters</button>
+                <button class="cat-btn" data-category="drinks">Beverages</button>
+                <button class="cat-btn" data-category="desserts">Desserts</button>
+            </div>
+
+            <div class="menu-grid" id="menu-items">
+                <!-- Items populated via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container about-grid">
+            <div class="about-text">
+                <span class="sub-heading">OUR STORY</span>
+                <h2>Passion for Perfect Pizza</h2>
+                <p>Located on Taha Hussein Street in Benghazi, 508 Pizza was founded with a singular mission: to bring exceptional artisan pizza crafted with dedication, premium ingredients, and authentic recipes to our community.</p>
+                <p>Every single pizza is hand-stretched, layered with our signature house-made tomato sauce, topped with 100% real mozzarella, and baked until bubbling and golden.</p>
+                <div class="features-list">
+                    <div class="feature-item">
+                        <strong>Fresh Ingredients</strong>
+                        <span>Sourced daily for maximum flavor</span>
+                    </div>
+                    <div class="feature-item">
+                        <strong>Artisan Dough</strong>
+                        <span>Slow-fermented for perfect crust</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-card">
+                <div class="card-highlight">
+                    <h3>Quality First</h3>
+                    <p>Experience unmatched taste in every single bite. Dine-in, takeaway, and delivery available.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Hours Section -->
+    <section id="location">
+        <div class="container">
+            <div class="section-header">
+                <h2>Visit & Contact Us</h2>
+                <p>We are waiting to serve you hot, fresh pizza</p>
+            </div>
+            <div class="location-grid">
+                <div class="info-card">
+                    <h3>Address</h3>
+                    <p>Taha Hussein Street, Military Accounts Complex</p>
+                    <p>Benghazi, Libya</p>
+                </div>
+                <div class="info-card">
+                    <h3>Opening Hours</h3>
+                    <p>Saturday - Thursday: 12:00 PM - 11:30 PM</p>
+                    <p>Friday: 2:00 PM - 12:00 AM</p>
+                </div>
+                <div class="info-card" id="contact">
+                    <h3>Orders & Inquiries</h3>
+                    <p>Phone: +218 91 000 0508</p>
+                    <p>Delivery available across Benghazi</p>
+                    <a href="tel:+218910000508" class="btn btn-primary" style="margin-top: 15px; display: inline-block;">Call to Order</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">508 PIZZA</div>
+            <p>&copy; 2026 508 Pizza. All rights reserved. Located in Benghazi, Libya.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
